@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "(cd server && npm run start) && npm run start"
+    "build": "npm run start"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
