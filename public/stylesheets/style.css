@@ -1,0 +1,238 @@
+body {
+  background-image: url(/images/cinema.jpg);
+  padding: 50px;
+  font: 20px Tahoma;
+  padding: 10%;
+  font-weight: 100;
+  opacity: 0.9;
+  direction: rtl;
+  background-attachment: fixed;
+}
+
+a {
+  color: #00B7FF;
+}
+
+p {
+  color: gray;
+}
+
+.navbar {
+  margin-top: 2%;
+  user-select: none;
+  width: 90%;
+  margin-right: 5%;
+  background-color: rgb(232, 191, 255);
+  border-radius: 20px;
+  border: 2px solid rgb(170, 207, 255);
+  opacity: 0.7;
+}
+
+.navlink {
+  color: gray;
+}
+
+.navlink:hover {
+  color: red;
+}
+
+.bodycolor {
+  background-color: rgb(248, 244, 255);
+}
+
+.container { 
+  border: 3px solid rgb(243, 150, 197);
+  border-radius: 10px;
+  background-color: rgb(255, 231, 222);
+  padding: 30px;
+}
+
+.menuitem {
+  color: rgb(247, 247, 162);
+  background-color: gray;
+  border-radius: 5px;
+  padding: 3px;
+  user-select: none;
+  transition: background-color .5s;
+}
+
+.menuitem:hover {
+  color: white;
+  background-color: pink;
+  text-decoration: none;
+}
+
+th {
+  font-style: normal;
+  border: none !important;
+  color: rgb(199, 124, 199);
+  background-color: rgb(252, 216, 216);
+  padding: 3px !important;
+  vertical-align: middle !important;
+}
+
+td {
+  font-style: normal;
+  border: 1px solid rgb(255, 145, 0) !important;
+  transition: background-color .5s;
+  color: gray;
+  padding: 3px !important;
+  vertical-align: middle !important;
+}
+
+td:hover {
+  background-color: lightblue;
+  cursor: pointer;
+  transition: background-color .5s;
+}
+
+td, th {
+  user-select: none;
+}
+
+table {
+  counter-reset: rowNumber;
+}
+
+table tr:not(:first-child) {
+  counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+  content: counter(rowNumber);
+  min-width: 1em;
+  margin-right: 0.5em;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 50px;
+  user-select: none;
+}
+
+.linkbutton {
+  padding: 10px;
+  text-decoration: none !important;
+  transition: background-color .5s;
+  border-radius: 5px;
+  border: none !important;
+  width: 150px;
+  color: white !important;
+  user-select: none;
+}
+
+.linkbutton:hover {
+  background-color: pink !important;
+  border: none !important;
+}
+
+#sym {
+  font-size: 50px;
+  font-style: normal;
+  font-weight: bold;
+  transform: scale(1, -1);
+  color: rgb(183, 219, 185);
+  margin-top: -5%;
+  margin-right: 5%;
+}
+
+.containerinfo {
+  background-color: rgb(216, 232, 238);
+  padding: 3%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 3%;
+  border-radius: 5px;
+}
+
+.containeredit {
+  background-color: rgb(255, 242, 205);
+  padding: 3%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 3%;
+  border-radius: 5px;
+}
+
+.dataTables_paginate {
+  margin-top: 3% !important;
+  margin-right: 50% !important;
+  float: left !important;
+}
+
+.pagination {
+  display: inline-block;
+  margin-right: 50% !important;
+  margin-top: -15% !important;
+}
+
+.pagination a {
+  color: red;
+  float: left;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.pagination li.active a{
+  font-weight: bold;
+  color: rgb(69, 124, 62);
+  background-color: rgb(195, 231, 245);
+  border-radius: 5px;
+}
+
+.dataTables_info {
+  margin-top: 5% !important;
+  float: right !important;
+  direction: rtl !important;
+}
+
+.search {
+  display: inline-block;
+  padding: 2%;
+}
+
+.dataTables_filter input {
+  margin-right: 10px !important;
+}
+
+.dataTables_length {
+  margin-right: 50%;
+  padding: 10px;
+}
+
+.dataTables_length select{
+  margin: 10px;
+}
+
+.containerplace {
+  background-color: lightblue;
+  padding: 2%;
+  margin: 3%;
+  border-radius: 5px;
+}
+
+.containerbilling {
+  background-color: lightgreen;
+  padding: 2%;
+  margin: 3%;
+  border-radius: 5px;
+}
+
+.containerperformance {
+  background-color: lightyellow;
+  padding: 2%;
+  margin: 3%;
+  border-radius: 5px;
+}
+
+select option {
+  color: gray !important;
+}
+
+select {
+  color: gray !important;
+}
+
+input {
+  color: gray !important;
+}

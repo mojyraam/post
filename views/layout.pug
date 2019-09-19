@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href='/stylesheets/bootstrap.min.css')
+    link(rel="stylesheet", href='/stylesheets/dataTables.bootstrap.min.css')
+    link(rel="stylesheet", href='/stylesheets/responsive.bootstrap.min.css')
+    block script
+      script(src='./javascripts/jquery-3.4.1.min.js')
+      script(src='./javascripts/bootstrap-boundle.min.js')
+      script(src='./javascripts/jquery-1.12.3.js')
+      script(src='./javascripts/jquery.dataTables.min.js')
+      script(src='./javascripts/dataTables.bootstrap.min.js')
+
+  body.bodycolor
+    block content
+    nav.navbar.navbar-expand-md.fixed-top
+      a(style='margin-right: 3%;', href='/').navbar-dark.navbar-brand.navlink خانه
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto(style='margin-left: 45%;')
+          //- li.nav-item.active
+          //-   a.nav-link.navlink(href='/')
+          //-     | Home 
+          //-     span.sr-only (current)
+          //- li.nav-item
+          //-   a.nav-link.navlink(href='#') Link
+          //- li.nav-item
+          //-   a.nav-link.disabled(href='#', tabindex='-1', aria-disabled='true') Disabled
+          li.nav-item.dropdown.ml-5
+            a.navbar-dark.navbar-brand.navlink(href='/users/logout' style='margin-right: -5%;') خروج
+          li.nav-item.dropdown.ml-5
+            a#dropdown01.nav-link.dropdown-toggle.navlink(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')  تجهیزات سخت افزاری
+            .dropdown-menu.di(aria-labelledby='dropdown01', style='background-color: rgb(243, 243, 221);')
+              a.dropdown-item(href='/monitor', style='color: green;') مانیتور
+              //a.dropdown-item(href='#', style='color: green;')  هارد
+              a.dropdown-item(href='#', style='color: green;')  دیتاسنتر
+        //p#sym &#9882 &#9882 &#9882 &#9882 &#9882 &#9882 &#9882 &#9882 &#9882 &#9882 &#9882 &#9882 &#9882 &#9882
+        form.form-inline.my-2.my-lg-0
+          input.form-control.mr-sm-2(type='text', placeholder='جستجو', aria-label='جستجو' style='margin-left: 10px;')
+          button.btn-info.linkbutton(type='submit' style='width: 100px; height: 35px; padding: 5px;') جستجو

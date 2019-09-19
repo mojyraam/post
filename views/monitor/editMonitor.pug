@@ -1,0 +1,109 @@
+extends ../layout
+block append script
+block content
+  .container(style='text-align: center;')
+    form(method='post' action='/editMonitor')
+      label.mb-3.text-danger به روز رسانی فرم
+      input#bid(type='hidden', name='bid', value= dem[0].Id)
+      .containerplace
+        label.text-secondary.mb-5 محل استقرار
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='state') استان
+          .col-md-3
+            select#state.form-control(name='state')
+              if dem[0].StateId.length > 0
+                option(value=dem[0].StateId) #{dem[0].StateName}
+                each item in dcm[0]
+                  option(value=item.Id) #{item.Name}
+              else
+                option(value='action') انتخاب کنید ...
+                each item in dcm[0]
+                  option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='county') شهرستان
+          .col-md-3
+            select#county.form-control(name='county')
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='city') شهر
+          .col-md-3
+            select#city.form-control(name='city')
+          .col-md-3
+            label.text-secondary(for='office') واحد پستی
+          .col-md-3
+            select#office.form-control(name='office')
+      .containerbilling
+        label.text-secondary.mb-5 اطلاعاا مالی و اداری
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='asset') شماره اموال
+          .col-md-3
+            .row
+              .col-6
+                input#asset.form-control(name='asset', value=dem[0].Asset_No)
+              .col-6
+                input#asset.form-control
+          .col-md-3
+            label.text-secondary(for='serial') شماره سریال
+          .col-md-3
+            input#serial.form-control(name='serial', value=dem[0].Serial_No)
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='nin') کد ملی تحویل گیرنده
+          .col-md-3
+            input#nin.form-control(name='nin', value=dem[0].National_Code)
+          .col-md-3
+            label.text-secondary(for='personal') کد پرسنلی
+          .col-md-3
+            input#personal.form-control(name='personal', value=dem[0].Personeli_Code)
+      .containerperformance
+        label.text-secondary.mb-5 محل استقرار
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='mark') مارک
+          .col-md-3
+            select#mark.form-control(name='mark')
+              if dem[0].MarkId.length > 0
+                option(value=dem[0].MarkId) #{dem[0].MarkName}
+                each item in dcm[3]
+                  option(value=item.Id) #{item.Name}
+              else
+                option(value='action') انتخاب کنید ...
+                each item in dcm[3]
+                  option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='model') مدل
+          .col-md-3
+            select#model.form-control(name='model')
+              if dem[0].ModelId.length > 0
+                option(value=dem[0].ModelId) #{dem[0].ModelName}
+                each item in dcm[4]
+                  option(value=item.Id) #{item.Name}
+              else
+                option(value='action') انتخاب کنید ...
+                each item in dcm[4]
+                  option(value=item.Id) #{item.Name}
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='size') سایز
+          .col-md-3
+            select#size.form-control(name='size')
+              if dem[0].SizeId.length > 0
+                option(value=dem[0].SizeId) #{dem[0].SizeName}
+                each item in dcm[5]
+                  option(value=item.Id) #{item.Name}
+              else
+                option(value='action') انتخاب کنید ...
+                each item in dcm[5]
+                  option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='time') تاریخ
+          .col-md-3
+            input.form-control(name='date', value=dem[0].Create_DateTiime)
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='description') توضیحات
+          .col-md-9
+            textarea#description.form-control.text-secondary(name='description') #{dem[0].Comment}
+      button.btn.btn-warning به روز رسانی

@@ -1,0 +1,37 @@
+extends layout
+block append script
+block content
+    .container
+      form(method='post' action='/users/login')
+        if success_msg != null
+          each item in success_msg
+            .alert.alert-success.alert-dismissible.fade.show(role='alert')
+              p(style='text-align: center;') #{item}
+              button.close(type='button' data-dismiss='alert' aria-label='Close')
+                span(aria-hidden='true') &times;
+        if error_msg != null
+          each item in error_msg
+            .alert.alert-danger.alert-dismissible.fade.show(role='alert')
+              p(style='text-align: center;') #{item}
+              button.close(type='button' data-dismiss='alert' aria-label='Close')
+                span(aria-hidden='true') &times;
+        if error != null
+          each item in error
+            .alert.alert-warning.alert-dismissible.fade.show(role='alert')
+              p(style='text-align: center;') #{item}
+              button.close(type='button' data-dismiss='alert' aria-label='Close')
+                span(aria-hidden='true') &times;
+        .containerplace
+          .row.mt-3.ml-5
+            .col-md-5
+            .col-md-3
+              input#email.form-control(type='text', name='email', placeholder='ایمیل')
+          .row.mt-3.ml-5
+            .col-md-5
+            .col-md-3
+              input#password.form-control(type='text', name='password', placeholder='کلمه عبور')
+          .row.mt-3.ml-5
+            .col-md-6.mr-5(style='margin-left: -2%;')
+              button(style='width: 88px;').btn.btn-success ورود
+            .col-md-1
+              a.btn.btn-primary(style='width: 88px;' href='/users/register') ثبت نام

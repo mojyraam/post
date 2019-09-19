@@ -1,0 +1,89 @@
+extends ../layout
+block append script
+  script(src='./javascripts/ajaxFilling.js')
+block content
+  .container(style='text-align: center;')
+    form(method='post' action='/createMonitor')
+      label.mb-3.text-success ایجاد فرم جدید
+      .containerplace
+        label.text-secondary.mb-5 محل استقرار
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='state') استان
+          .col-md-3
+            select#state.form-control(name='state')
+              option(value='action') انتخاب کنید ...
+              each item in dcm[0]
+                option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='county') شهرستان
+          .col-md-3
+            select#county.form-control(name='county')
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='city') شهر
+          .col-md-3
+            select#city.form-control(name='city')
+          .col-md-3
+            label.text-secondary(for='office') واحد پستی
+          .col-md-3
+            select#office.form-control(name='office')
+      .containerbilling
+        label.text-secondary.mb-5 اطلاعاا مالی و اداری
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='asset') شماره اموال
+          .col-md-3
+            .row
+              .col-6
+                input#asset.form-control(name='asset')
+              .col-6
+                input#asset.form-control
+          .col-md-3
+            label.text-secondary(for='serial') شماره سریال
+          .col-md-3
+            input#serial.form-control(name='serial')
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='nin') کد ملی تحویل گیرنده
+          .col-md-3
+            input#nin.form-control(name='nin')
+          .col-md-3
+            label.text-secondary(for='personal') کد پرسنلی
+          .col-md-3
+            input#personal.form-control(name='personal')
+      .containerperformance
+        label.text-secondary.mb-5 محل استقرار
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='mark') مارک
+          .col-md-3
+            select#mark.form-control(name='mark')
+              option(value='action') انتخاب کنید ...
+              each item in dcm[3]
+                option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='model') مدل
+          .col-md-3
+            select#model.form-control(name='model')
+              option(value='action') انتخاب کنید ...
+              each item in dcm[4]
+                option(value=item.Id) #{item.Name}
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='size') سایز
+          .col-md-3
+            select#size.form-control(name='size')
+              option(value='action') انتخاب کنید ...
+              each item in dcm[5]
+                option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='time') تاریخ
+          .col-md-3
+            input.form-control(type='date', name='date')
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='description') توضیحات
+          .col-md-9
+            textarea#description.form-control(name='description')
+      button.btn.btn-success ایجاد
