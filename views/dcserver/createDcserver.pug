@@ -1,0 +1,167 @@
+extends ../layout
+block append script
+  script(src='./javascripts/ajaxFilling.js')
+block content
+  .container(style='text-align: center;')
+    form(method='post' action='/createMonitor')
+      label.mb-3.text-success ایجاد فرم جدید
+      .containerplace
+        label.text-secondary.mb-5 محل استقرار
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='state') استان
+          .col-md-3
+            select#state.form-control(name='state')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[0]
+                option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='county') شهرستان
+          .col-md-3
+            select#county.form-control(name='county')
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='city') شهر
+          .col-md-3
+            select#city.form-control(name='city')
+          .col-md-3
+            label.text-secondary(for='dc') نام دیتاسنتر
+          .col-md-3
+            select#dc.form-control(name='dc')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[17]
+                option(value=item.Id) #{item.DC_Name}
+      .containerbilling
+        label.text-secondary.mb-5 اطلاعاا مالی و اداری
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='asset') شماره اموال
+          .col-md-3
+            input#asset.form-control(name='asset')
+          .col-md-3
+            label.text-secondary(for='serial') شماره سریال
+          .col-md-3
+            input#serial.form-control(name='serial')
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='nin') کد ملی تحویل گیرنده
+          .col-md-3
+            input#nin.form-control(name='nin')
+          .col-md-3
+            label.text-secondary(for='personal') کد پرسنلی
+          .col-md-3
+            input#personal.form-control(name='personal')
+      .containerperformance
+        label.text-secondary.mb-5 اطلاعات سخت افزاری 
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='brand') برند
+          .col-md-3
+            select#brand.form-control(name='brand')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[1]
+                option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='model') مدل
+          .col-md-3
+            select#model.form-control(name='model')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[2]
+                option(value=item.Id) #{item.Name}
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='year') سال تولید
+          .col-md-3
+            select#year.form-control(name='year')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[3]
+                option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='ccpu') تعداد پردازنده
+          .col-md-3
+            select#ccpu.form-control(name='ccpu')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[4]
+                option(value=item.Id) #{item.Name}
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='mcpu') مدل پردازنده
+          .col-md-3
+            select#mcpu.form-control(name='mcpu')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[5]
+                option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='cmodule') تعداد ماژول
+          .col-md-3
+            select#cmodule.form-control(name='cmodule')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[6]
+                option(value=item.Id) #{item.Name}
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='cram') ظرفیت رم
+          .col-md-3
+            select#cram.form-control(name='cram')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[7]
+                option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='cpower') تعداد پاور
+          .col-md-3
+            select#cpower.form-control(name='cpower')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[8]
+                option(value=item.Id) #{item.Name}
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='wpower') توان پاور
+          .col-md-3
+            select#wpower.form-control(name='wpower')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[9]
+                option(value=item.Id) #{item.Name}
+        .containerhard
+          label.text-secondary.mb-3 اطلاعات هارد 
+          .row.mt-3.ml-4.mb-5
+            .col-md-5
+            .col-md-3.pl-5
+              input.form-control.mb-2(type="text" placeholder="تعداد هارد")
+          .row.mt-3.ml-4
+            .col-md-3
+              label.text-secondary(for='wpower') ظرفیت هارد
+            .col-md-3
+              select#wpower.form-control(name='wpower')
+                option(value='action') انتخاب کنید ...
+                each item in dcds[9]
+                  option(value=item.Id) #{item.Name}
+            .col-md-3
+              label.text-secondary(for='wpower') مدل هارد
+            .col-md-3
+              select#wpower.form-control(name='wpower')
+                option(value='action') انتخاب کنید ...
+                each item in dcds[9]
+                  option(value=item.Id) #{item.Name}
+        .containerhwcard
+          label.text-secondary.mb-3 اطلاعات کارت سخت افزاری 
+          .row.mt-3.ml-4.mb-5
+            .col-md-5
+            .col-md-3.pl-5
+              input.form-control.mb-2(type="text" placeholder="تعداد کارت")
+          .row.mt-3.ml-4
+            .col-md-3
+            .col-md-3
+              label.text-secondary(for='wpower') ظرفیت هارد
+            .col-md-3
+              select#wpower.form-control(name='wpower')
+                option(value='action') انتخاب کنید ...
+                each item in dcds[9]
+                  option(value=item.Id) #{item.Name}
+          script.
+            console.log(!{JSON.stringify(dcds[17])})
+      //-   .row.mt-3.ml-4
+      //-     .col-md-3
+      //-       label.text-secondary(for='description') توضیحات
+      //-     .col-md-9
+      //-       textarea#description.form-control(name='description')
+      //- button.btn.btn-success ایجاد

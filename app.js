@@ -18,10 +18,10 @@ var createMonitorRouter = require('./routes/monitor/createMonitor');
 var deleteMonitorRouter = require('./routes/monitor/deleteMonitor');
 var editMonitorRouter = require('./routes/monitor/editMonitor');
 //dcserver
-/* var dcserverRouter = require('./routes/dcserver/dcserver');
-var createDcserverRouter = require('./routes/monitor/createMonitor');
-var deleteDcserverRouter = require('./routes/monitor/deleteMonitor');
-var editDcserverRouter = require('./routes/monitor/editMonitor'); */
+var dcserverRouter = require('./routes/dcserver/dcserver');
+var createDcserverRouter = require('./routes/dcserver/createDcserver');
+// var deleteDcserverRouter = require('./routes/dcserver/deleteDcserver');
+// var editDcserverRouter = require('./routes/dcserver/editDcserver');
 
 var app = express();
 
@@ -72,10 +72,10 @@ app.use('/createMonitor', createMonitorRouter);
 app.use('/deleteMonitor', deleteMonitorRouter);
 app.use('/editMonitor', editMonitorRouter);
 //dcserver
-/* app.use('/dcserver', dcserverRouter);
+app.use('/dcserver', dcserverRouter);
 app.use('/createDcserver', createDcserverRouter);
-app.use('/edicDcserver', editDcserverRouter);
-app.use('/deleteDcserver', deleteDcserverRouter); */
+// app.use('/edicDcserver', editDcserverRouter);
+// app.use('/deleteDcserver', deleteDcserverRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

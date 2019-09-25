@@ -23,22 +23,3 @@ block content
           th(scope='col') شماره سریال
           th(scope='col') نمایش و حذف
           th(scope='col') ویرایش
-      tbody
-        each item in dm
-          tr(style='font-size: 10px;')
-            td 
-            td #{item.StateName}
-            td #{item.CountyName}
-            td #{item.CityName}
-            td #{item.OfficeName}
-            td #{item.NodeKind}
-            td #{item.StatusName}
-            td #{item.Asset_No}
-            td #{item.Serial_No}
-            td
-              a.btn.btn-success(style='font-size: 7px; font-style: normal; margin-right: 2%;' href='/editMonitor/'+item.Id) &#10004
-            td               
-              a.btn.btn-warning(style='font-size: 7px; font-style: normal;' href='/deleteMonitor/delete/'+item.Id) &#128394
-    .row.mt-5.mr-5
-      .col-md-6.mr-3
-        a.btn-primary.linkbutton(style='padding-left: 30px; padding-right: 30px;', href='/createMonitor') ایجاد

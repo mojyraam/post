@@ -205,21 +205,50 @@ table tr td:first-child::before {
 }
 
 .containerplace {
-  background-color: lightblue;
+  background-image: url(/images/place.jpg);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-color: rgba(208, 223, 228, 0.9);
   padding: 2%;
   margin: 3%;
   border-radius: 5px;
 }
 
 .containerbilling {
-  background-color: lightgreen;
+  background-image: url(/images/billing.jpg);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-color: rgba(226, 255, 226, 0.9);
   padding: 2%;
   margin: 3%;
   border-radius: 5px;
 }
 
 .containerperformance {
-  background-color: lightyellow;
+  background-image: url(/images/performance.jpg);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-color: rgba(255, 255, 224, 0.9);
+  padding: 2%;
+  margin: 3%;
+  border-radius: 5px;
+}
+
+.containerhard {
+  background-image: url(/images/hard.jpg);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-color: rgba(248, 229, 229, 0.9);
+  padding: 2%;
+  margin: 3%;
+  border-radius: 5px;
+}
+
+.containerhwcard {
+  background-image: url(/images/hwcard.jpg);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-color: rgba(255, 247, 220, 0.9);
   padding: 2%;
   margin: 3%;
   border-radius: 5px;
