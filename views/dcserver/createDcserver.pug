@@ -1,9 +1,10 @@
 extends ../layout
 block append script
   script(src='./javascripts/ajaxFilling.js')
+  script(src='./javascripts/dynamicInput.js')
 block content
   .container(style='text-align: center;')
-    form(method='post' action='/createMonitor')
+    form(method='post' action='/createDcserver')
       label.mb-3.text-success ایجاد فرم جدید
       .containerplace
         label.text-secondary.mb-5 محل استقرار
@@ -121,27 +122,54 @@ block content
               option(value='action') انتخاب کنید ...
               each item in dcds[9]
                 option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='os') سیستم عامل
+          .col-md-3
+            select#os.form-control(name='os')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[10]
+                option(value=item.Id) #{item.Name}
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='rc') تعداد رک
+          .col-md-3
+            select#rc.form-control(name='rc')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[11]
+                option(value=item.Id) #{item.Name}
+          .col-md-3
+            label.text-secondary(for='wpower') سیستم عامل
+          .col-md-3
+            select#wpower.form-control(name='wpower')
+              option(value='action') انتخاب کنید ...
+              each item in dcds[10]
+                option(value=item.Id) #{item.Name}
         .containerhard
           label.text-secondary.mb-3 اطلاعات هارد 
           .row.mt-3.ml-4.mb-5
             .col-md-5
             .col-md-3.pl-5
-              input.form-control.mb-2(type="text" placeholder="تعداد هارد")
-          .row.mt-3.ml-4
-            .col-md-3
-              label.text-secondary(for='wpower') ظرفیت هارد
-            .col-md-3
-              select#wpower.form-control(name='wpower')
-                option(value='action') انتخاب کنید ...
-                each item in dcds[9]
-                  option(value=item.Id) #{item.Name}
-            .col-md-3
-              label.text-secondary(for='wpower') مدل هارد
-            .col-md-3
-              select#wpower.form-control(name='wpower')
-                option(value='action') انتخاب کنید ...
-                each item in dcds[9]
-                  option(value=item.Id) #{item.Name}
+              input.form-control.mb-2(type="text" disabled)
+          #TextBoxesGroup.TextBoxesGroup
+            .row.mt-3.ml-4
+              .col-md-3
+                label.text-secondary(for='wpower') ظرفیت هارد
+              .col-md-3
+                select#wpower.form-control(name='wpower')
+                  option(value='action') انتخاب کنید ...
+                  each item in dcds[9]
+                    option(value=item.Id) #{item.Name}
+              .col-md-3
+                label.text-secondary(for='wpower') مدل هارد
+              .col-md-3
+                select#wpower.form-control(name='wpower')
+                  option(value='action') انتخاب کنید ...
+                  each item in dcds[9]
+                    option(value=item.Id) #{item.Name}
+          .row.mt-5
+            .col-md-12
+              button#addButton.btn.btn-success افزورد
+              a#removeButton.btn.btn-danger.mr-3 حذف
         .containerhwcard
           label.text-secondary.mb-3 اطلاعات کارت سخت افزاری 
           .row.mt-3.ml-4.mb-5
@@ -157,11 +185,11 @@ block content
                 option(value='action') انتخاب کنید ...
                 each item in dcds[9]
                   option(value=item.Id) #{item.Name}
+        .row.mt-3.ml-4
+          .col-md-3
+            label.text-secondary(for='description') توضیحات
+          .col-md-9
+            textarea#description.form-control(name='description')
+      button.btn.btn-success ایجاد
           script.
             console.log(!{JSON.stringify(dcds[17])})
-      //-   .row.mt-3.ml-4
-      //-     .col-md-3
-      //-       label.text-secondary(for='description') توضیحات
-      //-     .col-md-9
-      //-       textarea#description.form-control(name='description')
-      //- button.btn.btn-success ایجاد
